@@ -54,16 +54,16 @@ export default function App() {
                 <td className="role-cell">{person.role}</td>
                 <td className="animals-cell">
                   {person.animals.map((animal) => (
-                    <p key={animal}>
+                    <div key={animal}>
                       <img
                         src={`https://www.randomlists.com/img/animals/${animal}.jpg`}
                         alt={animal}
                         title={animal}
                       />
-                      <span style={{ textTransform: "capitalize" }}>
+                      <p style={{ textTransform: "capitalize" }}>
                         {animal}
-                      </span>
-                    </p>
+                      </p>
+                    </div>
                   ))}
                 </td>
               </tr>
