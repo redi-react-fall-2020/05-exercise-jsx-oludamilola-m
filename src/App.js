@@ -54,7 +54,7 @@ export default function App() {
                 <td className="role-cell">{person.role}</td>
                 <td className="animals-cell">
                   {person.animals.map((animal) => (
-                    <div key={animal}>
+                    <p key={animal}>
                       <img
                         src={`https://www.randomlists.com/img/animals/${animal}.jpg`}
                         alt={animal}
@@ -63,7 +63,7 @@ export default function App() {
                       <span style={{ textTransform: "capitalize" }}>
                         {animal}
                       </span>
-                    </div>
+                    </p>
                   ))}
                 </td>
               </tr>
