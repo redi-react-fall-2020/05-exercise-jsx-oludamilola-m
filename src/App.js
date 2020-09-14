@@ -28,5 +28,49 @@ Feel free to have fun and experiment with others too!
 If you get stuck or need help, please reach out on Slack.
 */
 export default function App() {
-  return <div>Replace this with your beautiful JSX</div>;
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="react-logo" />
+        <h1>Redi React Fall 2020 Team</h1>
+      </header>
+      <main>
+        <table className="members-table">
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Animals</th>
+            </tr>
+          </thead>
+          <tbody>
+            {team.map((person) => (
+              <tr className="member-row" key={person.name}>
+                <td className="avatar-cell">
+                  <img src={person.image} alt={person.image} />
+                </td>
+                <td className="name-cell">{person.name}</td>
+                <td className="role-cell">{person.role}</td>
+                <td className="animals-cell">
+                  {person.animals.map((animal) => (
+                    <div key={animal}>
+                      <img
+                        src={`https://www.randomlists.com/img/animals/${animal}.jpg`}
+                        alt={animal}
+                        title={animal}
+                      />
+                      <p style={{ textTransform: "capitalize" }}>
+                        {animal}
+                      </p>
+                    </div>
+                  ))}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </main>
+    </div>
+  );
 }
